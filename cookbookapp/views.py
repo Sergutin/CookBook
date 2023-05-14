@@ -4,15 +4,17 @@ from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 
+from django.contrib.auth.decorators import login_required
 from .forms import RecipeForm
 from .models import Recipe
 
+@login_required
 def create_recipe(request):
     if request.method == 'POST':
         form = RecipeForm(request.POST)
         if form.is_valid():
             recipe = form.save(commit=False)
-            recipe.user = request.user  # Assign the current user to the recipe
+            recipe.user = request.user
             recipe.save()
             return redirect('recipe_detail', pk=recipe.pk)
     else:
