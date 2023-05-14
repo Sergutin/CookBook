@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_summernote',
-    'blog',
+    'cookbookapp',
 ]
 
 SITE_ID = 1
