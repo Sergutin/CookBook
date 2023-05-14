@@ -1,4 +1,4 @@
-<!-- {% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 <div class="container">
   <div class="row">
@@ -12,24 +12,4 @@
     </div>
   </div>
 </div>
-{% endblock %} -->
-
-
-{% extends 'base.html' %}
-
-{% block content %}
-  <h1>Create Recipe</h1>
-
-  <form method="POST" action="{% url 'create_recipe' %}">
-    {% csrf_token %}
-    <label for="id_title">Title:</label>
-    <input type="text" name="title" id="id_title">
-
-    <label for="id_content">Content:</label>
-    <textarea name="content" id="id_content"></textarea>
-
-    <input type="submit" value="Create Recipe">
-  </form>
-
-  <p>Your recipe will be visible after it has been approved by the admin.</p>
 {% endblock %}

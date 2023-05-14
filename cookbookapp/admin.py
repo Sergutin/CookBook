@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Recipe
+from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Post)
@@ -21,15 +21,3 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
-
-
-class RecipeAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'approved']
-
-    def get_queryset(self, request):
-        queryset = super().get_queryset(request)
-        if not request.user.is_superuser:  # Only show unapproved recipes to non-superusers
-            queryset = queryset.filter(approved=False)
-        return queryset
-
-admin.site.register(Recipe, RecipeAdmin)

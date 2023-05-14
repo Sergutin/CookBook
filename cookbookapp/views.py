@@ -11,16 +11,15 @@ from .forms import RecipeForm
 @login_required
 def create_recipe(request):
     if request.method == 'POST':
-        title = request.POST['title']
-        content = request.POST['content']
-        author = request.user
-
-        recipe = Recipe(title=title, content=content, author=author)
-        recipe.save()
-
-        return redirect('recipe_list')  # Redirect to the recipe list view
-
-    return render(request, 'create_recipe.html')
+        form = RecipeForm(request.POST)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.author = request.user
+            recipe.save()
+            return redirect('recipe_detail', recipe_id=recipe.id)
+    else:
+        form = RecipeForm()
+    return render(request, 'create_recipe.html', {'form': form})
 
 
 @login_required
