@@ -16,14 +16,10 @@ def create_recipe(request):
             recipe = form.save(commit=False)
             recipe.author = request.user
             recipe.save()
-            return redirect('recipe_detail', recipe_id=recipe.pk)
+            return redirect('recipe_detail', recipe_id=recipe.id)
     else:
         form = RecipeForm()
-
-    context = {
-        'form': form,
-    }
-    return render(request, 'create_recipe.html', context)
+    return render(request, 'create_recipe.html', {'form': form})
 
 
 @login_required

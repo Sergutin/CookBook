@@ -1,20 +1,10 @@
-<!-- create_recipe.html -->
-{% load auth %}
-
-
 {% extends 'base.html' %}
-
 {% block content %}
-  <h1>Create Recipe</h1>
-  {% if request.user.is_authenticated %}
+  <h2>Create Recipe</h2>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Create</button>
   </form>
-  {% else %}
-  <p>Please log in to create a recipe.</p>
-  {% endif %}
 {% endblock %}
-
 
