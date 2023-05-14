@@ -1,8 +1,42 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
+
+from .forms import RecipeForm
+from .models import Recipe
+
+def create_recipe(request):
+    if request.method == 'POST':
+        form = RecipeForm(request.POST)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.user = request.user  # Assign the current user to the recipe
+            recipe.save()
+            return redirect('recipe_detail', pk=recipe.pk)
+    else:
+        form = RecipeForm()
+    return render(request, 'create_recipe.html', {'form': form})
+
+def edit_recipe(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk, user=request.user)  # Retrieve the recipe if owned by the user
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, instance=recipe)
+        if form.is_valid():
+            form.save()
+            return redirect('recipe_detail', pk=recipe.pk)
+    else:
+        form = RecipeForm(instance=recipe)
+    return render(request, 'edit_recipe.html', {'form': form, 'recipe': recipe})
+
+def delete_recipe(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk, user=request.user)  # Retrieve the recipe if owned by the user
+    if request.method == 'POST':
+        recipe.delete()
+        return redirect('recipe_list')
+    return render(request, 'delete_recipe.html', {'recipe': recipe})
+
 
 
 class PostList(generic.ListView):
