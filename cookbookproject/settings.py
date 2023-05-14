@@ -57,8 +57,10 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'home'  # Set the desired URL after login
+LOGOUT_REDIRECT_URL = 'home'  # Set the desired URL after logout
+# LOGIN_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = '/'
 
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-info',
@@ -155,8 +157,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'cookbookapp', 'static'),]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type

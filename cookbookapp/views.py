@@ -5,8 +5,8 @@ from .models import Post
 from .forms import CommentForm
 
 from django.contrib.auth.decorators import login_required
-from .forms import RecipeForm
 from .models import Recipe
+from .forms import RecipeForm
 
 @login_required
 def create_recipe(request):
@@ -14,33 +14,42 @@ def create_recipe(request):
         form = RecipeForm(request.POST)
         if form.is_valid():
             recipe = form.save(commit=False)
-            recipe.user = request.user
+            recipe.author = request.user
             recipe.save()
-            return redirect('recipe_detail', pk=recipe.pk)
+            return redirect('recipe_detail', recipe_id=recipe.id)
     else:
         form = RecipeForm()
     return render(request, 'create_recipe.html', {'form': form})
 
-def edit_recipe(request, pk):
-    recipe = get_object_or_404(Recipe, pk=pk, user=request.user)  # Retrieve the recipe if owned by the user
+
+@login_required
+def update_recipe(request, recipe_id):
+    recipe = get_object_or_404(Recipe, id=recipe_id)
+    if recipe.author != request.user:
+        return redirect('recipe_detail', recipe_id=recipe.id)
+
     if request.method == 'POST':
         form = RecipeForm(request.POST, instance=recipe)
         if form.is_valid():
             form.save()
-            return redirect('recipe_detail', pk=recipe.pk)
+            return redirect('recipe_detail', recipe_id=recipe.id)
     else:
         form = RecipeForm(instance=recipe)
-    return render(request, 'edit_recipe.html', {'form': form, 'recipe': recipe})
+    return render(request, 'update_recipe.html', {'form': form, 'recipe': recipe})
 
-def delete_recipe(request, pk):
-    recipe = get_object_or_404(Recipe, pk=pk, user=request.user)  # Retrieve the recipe if owned by the user
+
+@login_required
+def delete_recipe(request, recipe_id):
+    recipe = get_object_or_404(Recipe, id=recipe_id)
+    if recipe.author != request.user:
+        return redirect('recipe_detail', recipe_id=recipe.id)
+
     if request.method == 'POST':
         recipe.delete()
-        return redirect('recipe_list')
+        return redirect('home')
     return render(request, 'delete_recipe.html', {'recipe': recipe})
 
-
-
+    
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
