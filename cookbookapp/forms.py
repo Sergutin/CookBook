@@ -8,6 +8,7 @@ class RecipeForm(forms.ModelForm):
         model = Recipe
         fields = ['title', 'description']
 
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
