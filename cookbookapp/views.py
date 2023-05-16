@@ -5,20 +5,23 @@ from .models import Post
 from .forms import CommentForm
 
 from django.contrib.auth.decorators import login_required
-from .models import Recipe
-from .forms import RecipeForm
+from .models import Recipes
+from .forms import MyRecipeForm
 
 @login_required
 def create_recipe(request):
     if request.method == 'POST':
-        form = RecipeForm(request.POST)
+        form = MyRecipeForm(request.POST)
         if form.is_valid():
             recipe = form.save(commit=False)
+            print(recipe)
             recipe.author = request.user
             recipe.save()
-            return redirect('recipe_detail', recipe_id=recipe.id)
+            # return redirect('recipe_detail', recipe_id=recipe.id)
+        else:
+            print("Error")
     else:
-        form = RecipeForm()
+        form = MyRecipeForm()
     return render(request, 'create_recipe.html', {'form': form})
 
 
@@ -29,12 +32,12 @@ def update_recipe(request, recipe_id):
         return redirect('recipe_detail', recipe_id=recipe.id)
 
     if request.method == 'POST':
-        form = RecipeForm(request.POST, instance=recipe)
+        form = MyRecipeForm(request.POST, instance=recipe)
         if form.is_valid():
             form.save()
             return redirect('recipe_detail', recipe_id=recipe.id)
     else:
-        form = RecipeForm(instance=recipe)
+        form = MyRecipeForm(instance=recipe)
     return render(request, 'update_recipe.html', {'form': form, 'recipe': recipe})
 
 
