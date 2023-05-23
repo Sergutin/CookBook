@@ -22,6 +22,24 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
 
+# @admin.register(Recipes)
+# class RecipeAdmin(admin.ModelAdmin):
+#     list_display = ('title',)
+#     search_fields = ('title', 'description')
+#     actions = ['approve_recipes']
+
+
+#     def approve_recipes(self, request, queryset):
+#         queryset.update(approved=True)
+
 @admin.register(Recipes)
 class RecipeAdmin(admin.ModelAdmin):
-    list_display = ('title',)
+    list_display = ('title', 'approved')  # Display the 'approved' field in the admin list
+    list_filter = ('approved',)  # Add 'approved' to the admin filter options
+    search_fields = ('title',)  # Enable searching by title
+    actions = ['approve_recipes']
+
+    def approve_recipes(self, request, queryset):
+        queryset.update(approved=True)
+    approve_recipes.short_description = "Approve selected recipes"  # Action description
+

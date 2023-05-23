@@ -1,11 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Recipes
 from .forms import CommentForm
 
 from django.contrib.auth.decorators import login_required
-from .models import Recipes
 from .forms import MyRecipeForm
 
 @login_required
@@ -53,11 +52,23 @@ def delete_recipe(request, recipe_id):
     return render(request, 'delete_recipe.html', {'recipe': recipe})
 
     
+# class PostList(generic.ListView):
+#     model = Post
+#     queryset = Post.objects.filter(status=1).order_by("-created_on")
+#     template_name = "index.html"
+#     paginate_by = 6
+
 class PostList(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 6
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['approved_recipes'] = Recipes.objects.filter(approved=True)
+        return context
+
+
 
 
 class PostDetail(View):
