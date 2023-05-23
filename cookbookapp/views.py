@@ -26,18 +26,19 @@ def create_recipe(request):
 
 @login_required
 def update_recipe(request, recipe_id):
-    recipe = get_object_or_404(Recipe, id=recipe_id)
+    recipe = get_object_or_404(Recipes, id=recipe_id)
     if recipe.author != request.user:
-        return redirect('recipe_detail', recipe_id=recipe.id)
+        return redirect('post_detail', slug=recipe.slug)
 
     if request.method == 'POST':
         form = MyRecipeForm(request.POST, instance=recipe)
         if form.is_valid():
             form.save()
-            return redirect('recipe_detail', recipe_id=recipe.id)
+            return redirect('post_detail', slug=recipe.slug)
     else:
         form = MyRecipeForm(instance=recipe)
     return render(request, 'update_recipe.html', {'form': form, 'recipe': recipe})
+
 
 
 @login_required
