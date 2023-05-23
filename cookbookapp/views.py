@@ -43,14 +43,13 @@ def update_recipe(request, recipe_id):
 
 @login_required
 def delete_recipe(request, recipe_id):
-    recipe = get_object_or_404(Recipe, id=recipe_id)
-    if recipe.author != request.user:
-        return redirect('recipe_detail', recipe_id=recipe.id)
-
-    if request.method == 'POST':
+    recipe = get_object_or_404(Recipes, id=recipe_id)
+    if request.method == 'POST' and request.user == recipe.author:
         recipe.delete()
         return redirect('home')
-    return render(request, 'delete_recipe.html', {'recipe': recipe})
+    else:
+        # Handle unauthorized access or other cases
+        return redirect('home')
 
     
 # class PostList(generic.ListView):
