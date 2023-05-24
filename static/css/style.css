@@ -188,6 +188,11 @@ form {
     padding-left: 0;
 }
 
+.footer {
+    background-image: url('https://www.willflyforfood.net/wp-content/uploads/2021/09/irish-food-beef-stew-featured.jpg');
+}
+
+
 .sm li {
     display:  inline;
 }
