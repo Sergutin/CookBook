@@ -171,4 +171,29 @@ form {
   button[type="submit"]:hover {
     background-color: #45a049;
   }
+
+.card-title {
+    align-items: center;
+    text-align: center;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+  }
   
+.sm {
+    text-align: center;
+    color: white;
+    padding-left: 0;
+}
+
+.sm li {
+    display:  inline;
+}
+
+.sm i {
+    font-size: 150%;
+    margin: 0 50px 0 50px;
+    color: white;
+}
