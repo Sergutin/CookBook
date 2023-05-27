@@ -7,6 +7,7 @@ from .forms import CommentForm
 from django.contrib.auth.decorators import login_required
 from .forms import MyRecipeForm
 from django.core.paginator import Paginator
+from django.contrib import messages
 
 
 
@@ -31,15 +32,16 @@ def create_recipe(request):
 @login_required
 def update_recipe(request, recipe_id):
     recipe = get_object_or_404(Recipes, id=recipe_id)
-    
+
     if request.method == 'POST':
         form = MyRecipeForm(request.POST, instance=recipe)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Your recipe has been updated!')
             return redirect('home')
     else:
         form = MyRecipeForm(instance=recipe)
-    
+
     return render(request, 'update_recipe.html', {'form': form, 'recipe': recipe})
 
 
