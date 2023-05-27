@@ -3,12 +3,9 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Recipes
 from .forms import CommentForm
-
 from django.contrib.auth.decorators import login_required
 from .forms import MyRecipeForm
-from django.core.paginator import Paginator
 from django.contrib import messages
-
 
 
 @login_required
@@ -55,7 +52,8 @@ def delete_recipe(request, recipe_id):
     else:
         # Handle unauthorized access or other cases
         return redirect('home')
-    
+
+        
 
 class PostList(generic.ListView):
     model = Post
@@ -65,15 +63,10 @@ class PostList(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['approved_recipes'] = Recipes.objects.filter(approved=True)
-        context['post_list'] = Post.objects.filter(status=1).order_by("-created_on")
-
-        # Paginate the approved recipes
-        paginator = Paginator(context['approved_recipes'], self.paginate_by)
-        page_number = self.request.GET.get('page')
-        page_obj = paginator.get_page(page_number)
-        context['approved_recipes'] = page_obj
-
+        context['post_list'] = Post.objects.filter(status=1).order_by("-created_on")  # Add this line
         return context
+
+
 
 
 
