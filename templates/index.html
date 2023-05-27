@@ -68,6 +68,9 @@
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                             {% endif %}
+                            {% if recipe.image %}
+                            <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                            {% endif %}
                         </div>
                     </div>
                 </div>

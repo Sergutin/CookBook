@@ -11,6 +11,7 @@ class Recipes(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
+    image = models.ImageField(upload_to='recipe_images', blank=True, null=True)
 
     # Add the slug field
     slug = models.SlugField(unique=True, blank=True)
