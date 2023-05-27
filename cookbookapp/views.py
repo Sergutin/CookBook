@@ -10,19 +10,20 @@ from .forms import MyRecipeForm
 
 @login_required
 def create_recipe(request):
+    created = False  # Initialize the created variable
     if request.method == 'POST':
         form = MyRecipeForm(request.POST)
         if form.is_valid():
             recipe = form.save(commit=False)
-            print(recipe)
             recipe.author = request.user
             recipe.save()
-            # return redirect('recipe_detail', recipe_id=recipe.id)
+            created = True  # Set the created variable to True
         else:
             print("Error")
     else:
         form = MyRecipeForm()
-    return render(request, 'create_recipe.html', {'form': form})
+    return render(request, 'create_recipe.html', {'form': form, 'created': created})
+
 
 
 @login_required
