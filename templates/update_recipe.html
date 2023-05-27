@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
   <h2>Update Recipe</h2>
-  <form method="post">
+  <form method="post" action="{% url 'update_recipe' recipe_id=recipe.id %}">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Update</button>

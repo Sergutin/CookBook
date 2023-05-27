@@ -7,6 +7,7 @@ from .forms import CommentForm
 from django.contrib.auth.decorators import login_required
 from .forms import MyRecipeForm
 
+
 @login_required
 def create_recipe(request):
     if request.method == 'POST':
@@ -27,16 +28,15 @@ def create_recipe(request):
 @login_required
 def update_recipe(request, recipe_id):
     recipe = get_object_or_404(Recipes, id=recipe_id)
-    if recipe.author != request.user:
-        return redirect('post_detail', slug=recipe.slug)
-
+    
     if request.method == 'POST':
         form = MyRecipeForm(request.POST, instance=recipe)
         if form.is_valid():
             form.save()
-            return redirect('post_detail', slug=recipe.slug)
+            return redirect('home')
     else:
         form = MyRecipeForm(instance=recipe)
+    
     return render(request, 'update_recipe.html', {'form': form, 'recipe': recipe})
 
 
