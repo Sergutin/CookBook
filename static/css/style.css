@@ -202,3 +202,14 @@ form {
     margin: 0 50px 0 50px;
     color: white;
 }
+
+.edit-button {
+    background-color: green;
+    color: white;
+  }
+  
+.delete-button {
+    background-color: rgb(110, 70, 110);
+    color: white;
+  }
+  
