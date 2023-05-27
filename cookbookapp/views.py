@@ -67,7 +67,9 @@ class PostList(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['approved_recipes'] = Recipes.objects.filter(approved=True)
+        context['post_list'] = Post.objects.filter(status=1).order_by("-created_on")  # Add this line
         return context
+
 
 
 
