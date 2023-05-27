@@ -45,23 +45,17 @@ def update_recipe(request, recipe_id):
     return render(request, 'update_recipe.html', {'form': form, 'recipe': recipe})
 
 
-
 @login_required
 def delete_recipe(request, recipe_id):
     recipe = get_object_or_404(Recipes, id=recipe_id)
     if request.method == 'POST' and request.user == recipe.author:
         recipe.delete()
+        messages.success(request, 'Your recipe has been deleted!')
         return redirect('home')
     else:
         # Handle unauthorized access or other cases
         return redirect('home')
-
     
-# class PostList(generic.ListView):
-#     model = Post
-#     queryset = Post.objects.filter(status=1).order_by("-created_on")
-#     template_name = "index.html"
-#     paginate_by = 6
 
 class PostList(generic.ListView):
     model = Post
