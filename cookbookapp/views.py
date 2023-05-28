@@ -6,6 +6,7 @@ from .forms import CommentForm
 from django.contrib.auth.decorators import login_required
 from .forms import MyRecipeForm
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 
 @login_required
@@ -62,8 +63,12 @@ class PostList(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        post_list = Post.objects.filter(status=1).order_by("-created_on")
+        paginator = Paginator(post_list, self.paginate_by)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context['page_obj'] = page_obj
         context['approved_recipes'] = Recipes.objects.filter(approved=True)
-        context['post_list'] = Post.objects.filter(status=1).order_by("-created_on")  # Add this line
         return context
 
 
