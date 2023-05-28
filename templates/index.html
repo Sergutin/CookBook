@@ -1,14 +1,29 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 <div class="container-fluid">
     <div class="row">
 
         <!-- Main Image -->
-        <div class="col-12 mt-3">
+        
+        <!-- <div class="col-12 mt-3">
             <img class="main-image"
                 src="https://www.willflyforfood.net/wp-content/uploads/2021/09/irish-food-beef-stew-featured.jpg"
+                alt="Main Image">
+        </div>
+        <div class="col-12 mt-3">
+            <img class="main-image" src="{{ MEDIA_URL }}main.jpeg"
+                alt="Main Image">
+        </div>
+        <div class="col-12 mt-3">
+            <img class="main-image"
+                src="./media/1.png"
+                alt="Main Image">
+        </div> -->
+        <div class="col-12 mt-3">
+            <img class="main-image"
+                src="../media/main.jpeg"
                 alt="Main Image">
         </div>
         <hr>

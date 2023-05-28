@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from cookbookapp import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +26,4 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('update/<int:recipe_id>/', views.update_recipe, name='update_recipe'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
