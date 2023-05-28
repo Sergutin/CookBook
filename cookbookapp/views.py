@@ -13,7 +13,7 @@ from django.core.paginator import Paginator
 def create_recipe(request):
     created = False  # Initialize the created variable
     if request.method == 'POST':
-        form = MyRecipeForm(request.POST)
+        form = MyRecipeForm(request.POST, request.FILES)
         if form.is_valid():
             recipe = form.save(commit=False)
             recipe.author = request.user
@@ -24,6 +24,7 @@ def create_recipe(request):
     else:
         form = MyRecipeForm()
     return render(request, 'create_recipe.html', {'form': form, 'created': created})
+
 
 
 

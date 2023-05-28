@@ -6,7 +6,8 @@ from django.utils.text import slugify
 
 class Recipes(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    instructions = models.TextField()
+    ingredients = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -48,7 +49,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
+        
+    @property
     def number_of_likes(self):
         return self.likes.count()
 

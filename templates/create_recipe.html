@@ -11,7 +11,10 @@
       {% endif %}
       <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.title.label_tag }} {{ form.title }}
+        {{ form.ingredients.label_tag }} {{ form.ingredients }}
+        {{ form.instructions.label_tag }} {{ form.instructions }}
+        {{ form.image.label_tag }} {{ form.image }}
         <button type="submit">Create</button>
       </form>
     </div>
