@@ -51,9 +51,8 @@ def delete_recipe(request, recipe_id):
         recipe.delete()
         messages.success(request, 'Your recipe has been deleted!')
         return redirect('home')
-    else:
-        # Handle unauthorized access or other cases
-        return redirect('home')
+
+    return render(request, 'delete_recipe.html', {'recipe': recipe})
 
         
 

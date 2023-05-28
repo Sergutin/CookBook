@@ -75,6 +75,8 @@
 
                             {% if user.is_authenticated and user == recipe.author %}
                             <a href="{% url 'update_recipe' recipe.pk %}" class="btn btn-primary">Edit</a>
+                            <a href="{% url 'delete_recipe' recipe.pk %}" class="btn btn-danger">Delete</a>
+
                             {% endif %}
                         </div>
                     </div>

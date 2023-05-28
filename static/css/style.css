@@ -202,3 +202,17 @@ form {
     margin: 0 50px 0 50px;
     color: white;
 }
+
+.delete-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .delete-button {
+    margin-top: 10px;
+  }
+  
