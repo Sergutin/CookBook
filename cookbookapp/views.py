@@ -26,8 +26,6 @@ def create_recipe(request):
     return render(request, 'create_recipe.html', {'form': form, 'created': created})
 
 
-
-
 @login_required
 def update_recipe(request, recipe_id):
     recipe = get_object_or_404(Recipes, id=recipe_id)
@@ -54,7 +52,6 @@ def delete_recipe(request, recipe_id):
 
     return render(request, 'delete_recipe.html', {'recipe': recipe})
 
-        
 
 class PostList(generic.ListView):
     model = Post
@@ -70,9 +67,6 @@ class PostList(generic.ListView):
         context['page_obj'] = page_obj
         context['approved_recipes'] = Recipes.objects.filter(approved=True)
         return context
-
-
-
 
 
 class PostDetail(View):
@@ -96,7 +90,7 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
-    
+
     def post(self, request, slug, *args, **kwargs):
 
         queryset = Post.objects.filter(status=1)
@@ -130,7 +124,7 @@ class PostDetail(View):
 
 
 class PostLike(View):
-    
+
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -139,4 +133,3 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-        

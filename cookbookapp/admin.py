@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Post, Comment, Recipes
 from django_summernote.admin import SummernoteModelAdmin
 
+
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 
@@ -22,24 +23,20 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
 
-# @admin.register(Recipes)
-# class RecipeAdmin(admin.ModelAdmin):
-#     list_display = ('title',)
-#     search_fields = ('title', 'description')
-#     actions = ['approve_recipes']
-
-
-#     def approve_recipes(self, request, queryset):
-#         queryset.update(approved=True)
 
 @admin.register(Recipes)
 class RecipeAdmin(admin.ModelAdmin):
-    list_display = ('title', 'approved')  # Display the 'approved' field in the admin list
-    list_filter = ('approved',)  # Add 'approved' to the admin filter options
-    search_fields = ('title',)  # Enable searching by title
+    # Display the 'approved' field in the admin list
+    list_display = ('title', 'approved')
+
+    # Add 'approved' to the admin filter options
+    list_filter = ('approved',)
+
+    # Enable searching by title
+    search_fields = ('title',)
     actions = ['approve_recipes']
 
     def approve_recipes(self, request, queryset):
         queryset.update(approved=True)
-    approve_recipes.short_description = "Approve selected recipes"  # Action description
-
+    # Action description
+    approve_recipes.short_description = "Approve selected recipes"
