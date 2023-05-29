@@ -23,7 +23,11 @@ def create_recipe(request):
             print("Error")
     else:
         form = MyRecipeForm()
-    return render(request, 'create_recipe.html', {'form': form, 'created': created})
+    return render(
+        request,
+        'create_recipe.html',
+        {'form': form, 'created': created}
+        )
 
 
 @login_required
@@ -39,7 +43,11 @@ def update_recipe(request, recipe_id):
     else:
         form = MyRecipeForm(instance=recipe)
 
-    return render(request, 'update_recipe.html', {'form': form, 'recipe': recipe})
+    return render(
+        request,
+        'update_recipe.html',
+        {'form': form, 'recipe': recipe}
+        )
 
 
 @login_required
