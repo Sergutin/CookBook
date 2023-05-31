@@ -137,6 +137,29 @@
 
 <img src="./media/readme/comment.png" width=600px height=auto>
 
+  Furthermore, a notification is provided every time the user performs the following actions:
+
+- User successfully logs in.
+
+<img src="./media/readme/login_user.png" width=600px height=auto>
+
+- User successfully logs out.
+
+<img src="./media/readme/logout_user.png" width=600px height=auto>
+
+- User successfully creates a recipe.
+
+<img src="./media/readme/create_r.png" width=600px height=auto>
+
+- User successfully updates the recipe.
+
+<img src="./media/readme/update_r.png" width=600px height=auto>
+
+- User successfully deletes the recipe.
+
+<img src="./media/readme/delete_r.png" width=600px height=auto>
+
+
 ## Testing
 
     Account Registration Tests
