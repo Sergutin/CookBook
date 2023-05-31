@@ -231,4 +231,7 @@ form {
 .cancel-button:active {
     background-color: #E84610;
   }
-  
+
+.update_recipe {
+    text-align: center;
+}
