@@ -181,9 +181,15 @@
 <img src="./media/readme/python.png" width=600px height=auto>
 
   ### Lighthouse
-    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    The website was measured using Lighthouse tool, performance 100% was calculated for desktop device:
 
+<img src="./media/readme/light_d1.png" width=600px height=auto>
+<img src="./media/readme/light_d2.png" width=600px height=auto>
 
+    and 95-97% for mobile device:
+<img src="./media/readme/light_m1.png" width=600px height=auto>
+<img src="./media/readme/light_m2.png" width=600px height=auto>
+<img src="./media/readme/light_m3.png" width=600px height=auto>
 
   ### Manual testing
     Responsiveness was tested in different browsers:
