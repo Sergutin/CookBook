@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["cookbook-igor.herokuapp.com", "localhost", ".herokuapp.com", ".heroku.com"]
 
