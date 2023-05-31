@@ -1,7 +1,9 @@
+/* Global Styles */
 body {
     background-color: #F9FAFC;
 }
 
+/* Typography */
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -13,6 +15,7 @@ body {
     font-weight: 300;
 }
 
+/* Background Styles */
 .light-bg {
     background-color: #fff;
 }
@@ -25,11 +28,13 @@ body {
     background-color: #F9FAFC;
 }
 
+/* Card Styles */
 .card {
     border: none;
     background-color: transparent;
 }
 
+/* Image Styles */
 .image-container {
     position: relative;
 }
@@ -42,12 +47,14 @@ body {
     background-color: rgb(102, 217, 102);
 }
 
+/* Text Styles */
 .author {
     color: purple;
     margin: 4px;
     text-transform: uppercase;
 }
 
+/* Masthead Styles */
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -82,6 +89,7 @@ body {
     z-index: 100;
 }
 
+/* Link Styles */
 .post-link {
     text-decoration: none;
     color: #445261;
@@ -92,6 +100,7 @@ body {
     color: #E84610;
 }
 
+/* Post Styles */
 .post-title {
     margin-top: 20%;
     margin-left: 5%;
@@ -102,6 +111,7 @@ body {
     color: lightgray;
 }
 
+/* Button Styles */
 .btn-signup {
     background-color: #23BBBB;
     color: #fff;
@@ -137,51 +147,53 @@ body {
     border: none;
 }
 
-
-/* Style the form */
+/* Form Styles */
 form {
     width: 400px;
     margin: 0 auto;
-  }
-  
-  label {
+}
+
+label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-  }
-  
-  input[type="text"],
-  textarea {
+}
+
+input[type="text"],
+textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  button[type="submit"] {
+}
+
+button[type="submit"] {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #45a049;
-  }
+}
 
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Card Title */
 .card-title {
     align-items: center;
     text-align: center;
 }
 
+/* Main Image */
 .main-image {
     width: 100%;
     height: auto;
-  }
-  
+}
+
+/* Social Media Icons */
 .sm {
     text-align: center;
     color: white;
@@ -192,8 +204,12 @@ form {
     background-image: url('https://res.cloudinary.com/dvec0etvd/image/upload/v1685385509/main_pskhlz.jpg');
 }
 
+.m-0 {
+    padding-bottom: 1em;
+}
+
 .sm li {
-    display:  inline;
+    display: inline;
 }
 
 .sm i {
@@ -202,6 +218,7 @@ form {
     color: white;
 }
 
+/* Delete Container */
 .delete-container {
     display: flex;
     flex-direction: column;
@@ -209,11 +226,11 @@ form {
     justify-content: center;
     text-align: center;
     margin-top: 20px;
-  }
-  
+}
+
 .delete-button {
     margin-top: 10px;
-  }
+}
 
 .cancel-button {
     background-color: #E84610;
@@ -222,20 +239,17 @@ form {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-.cancel-button:hover {
-    background-color: #FF7043;
-  }
-  
-.cancel-button:active {
-    background-color: #E84610;
-  }
-
-.update_recipe {
-    text-align: center;
 }
 
-.m-0 {
-    padding-bottom: 1em;
+.cancel-button:hover {
+    background-color: #FF7043;
+}
+
+.cancel-button:active {
+    background-color: #E84610;
+}
+
+/* Update Recipe */
+.update_recipe {
+    text-align: center;
 }
