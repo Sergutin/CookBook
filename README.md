@@ -237,6 +237,11 @@
   ### Fixed Bugs
     During bug testing, it was discovered that the .gitignore file was not created, resulting in sensitive information being uploaded to GitHub. To address this issue, I recreated the database on PostgreSQL, updated all credentials in the env.py file and in the Heroku project settings, including the values for DATABASE_URL, SECRET_KEY, and CLOUDINARY_URL.
 
+    During HTML code testing, there were several errors:
+
+  <img src="./media/readme/html_bugs.png" width=600px height=auto>
+
+
 
   ### Unfixed Bugs
 <p>There are no known unfixed bugs in the code</p>
