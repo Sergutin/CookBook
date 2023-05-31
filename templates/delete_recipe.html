@@ -17,6 +17,7 @@
       <form method="post">
         {% csrf_token %}
         <button type="submit" class="delete-button">Delete</button>
+        <a href="{% url 'home' %}" class="cancel-button">Cancel</a> <!-- Added cancel button -->
       </form>
     {% else %}
       <p>You do not have permission to delete this recipe.</p>

@@ -14,5 +14,6 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Update</button>
+    <a href="{% url 'home' %}" class="cancel-button">Cancel</a> <!-- Added Cancel button -->
   </form>
 {% endblock %}
