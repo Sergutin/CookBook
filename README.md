@@ -29,8 +29,8 @@
 * [User Stories](#user-stories)
 * [Features](#features)
 * [Testing](#testing)
-  * [HTML](#html)
-  * [CSS](#css)
+  * [HTML Test](#html-test)
+  * [CSS Test](#css-test)
   * [CI Python Linter](#ci-python-linter)
   * [Lighthouse](#lighthouse)
   * [Manual Testing](#manual-testing)
@@ -165,12 +165,12 @@
 | Admin can delete user | Pass |
 
 
-  ### HTML 
+  ### HTML Test
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 
-  ### CSS 
+  ### CSS Test
     No errors were found when passing through the official (Jigsaw) CSS validator.
 
 <img src="./media/readme/css.png" width=600px height=auto>
