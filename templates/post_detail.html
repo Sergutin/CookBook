@@ -13,9 +13,9 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://www.irishcentral.com/uploads/article/133633/IRISH_Crisp_sandwich___IrishCentral_2.jpg?t=1656579230" width="100%">
+                <img src="https://www.irishcentral.com/uploads/article/133633/IRISH_Crisp_sandwich___IrishCentral_2.jpg?t=1656579230" width="100%" alt="recipe image">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src=" {{ post.featured_image.url }}" width="100%" alt="recipe image">
                 {% endif %}
             </div>
         </div>

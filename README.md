@@ -203,23 +203,8 @@
     No broken links found, everything works as expected.
 
   ### Fixed Bugs
-<p>During the project there were a few bugs and errors that have been fixed.</p>
-<ul>
-<li>Bug Number One: "You Win" window appeared every time after 2 matching pairs (for "easy" and for "normal" game as well, while for "normal" game it supposed to appear after 8 matching pairs rather than 2).</li>
-<p>Solution: JavaScript function matchCards was amended from:</p>
-<img src="assets/images/readme/bug1.jpg" width=300px height=auto>
-<p>to:</p>
-<img src="assets/images/readme/bug1fix.jpg" width=300px height=auto>
-<p>Additionally a global variable "level" was added with a default value of "null". It helped to solve the issue.</p>
-<li>Bug Number Two: Shuffle function didn't work properly for easy game, it was taking random cards from the whole array (8 cards) rather than from the first two cards.</li>
-<p>Solution: "shuffleCard" function was moved from "matchCard" function to the very beginning of the game, when users decide which game to play (easy / normal). Code with a bug:</p>
-<img src="assets/images/readme/bug2.jpg" width=300px height=auto>
-<p>Code after the fix:</p>
-<img src="assets/images/readme/bug2fix.jpg" width=300px height=auto>
-<li>Bug Number Three: Last four images in Normal game were not visible, just alt description was available.</li>
-<img src="assets/images/readme/bug3.jpg" width=500px height=auto>
-<p>Solution: forEach function (within shuffleCard function) was trying to run through all the cards, including the ones were hidden (when "Normal" game is being played, "Easy" game cards are being hidden). Another function "shuffleEasyCard" was implemented to separate cards for "normal" game and the ones for "easy" game. It solved the issue.</p>
-</ul>
+    During bug testing, it was discovered that the .gitignore file was not created, resulting in sensitive information being uploaded to GitHub. To address this issue, I recreated the database on PostgreSQL, updated all credentials in the env.py file and in the Heroku project settings, including the values for DATABASE_URL, SECRET_KEY, and CLOUDINARY_URL.
+
 
   ### Unfixed Bugs
 <p>There are no known unfixed bugs in the code</p>
@@ -229,7 +214,7 @@
 <p>To deploy the site using GitHub Pages:</p>
 <ol>
 <li>Login or signup to Github.</li>
-<li>Go to the repository for this project, https://github.com/Sergutin/CardMemoryGame</li>
+<li>Go to the repository for this project, https://github.com/Sergutin/CookBook</li>
 <li>At the top of the repository, locate the "Settings" button on the menu.</li>
 <li>Select "Pages" section in the left hand menu.</li>
 <li>From the "Source" dropdown select "Deploy from a Branch". Press "Save".</li>
@@ -242,7 +227,6 @@ To fork a repository in GitHub:</p>
 <ol>
 <li>On GitHub.com, navigate to the repository.</li>
 <li>In the top-right corner of the page, click Fork.</li>
-<img src="assets/images/readme/fork.jpg" width=200px height=auto>
 <li>Select an owner for the forked repository.</li>
 <li>By default, forks are named the same as their parent repositories. You can change the name of the fork to distinguish it further.</li>
 <li>Optionally, add a description of your fork.</li>
@@ -255,11 +239,9 @@ To clone a repository in GitHub:</p>
 <ol>
 <li>On GitHub.com, navigate to your fork of the repository.</li>
 <li>Above the list of files, click  Code.</li>
-<img src="assets/images/readme/code.jpg" width=350px height=auto>
 <li>Copy the URL for the repository.</li>
 <ul>
     <li>To clone the repository using HTTPS, click the "Copy" icon on the right of "HTTPS".</li>
-<img src="assets/images/readme/clone.jpg" width=500px height=auto>
 <li>To clone the repository using an SSH key, including a certificate issued by your organization's SSH certificate authority, click SSH, then click the icon on the right to copy it.</li>
   <li>To clone a repository using GitHub CLI, click GitHub CLI, then click the "Copy" icon on the right.</li>
 </ul>

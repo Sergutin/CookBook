@@ -24,12 +24,11 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://www.irishcentral.com/uploads/article/133633/IRISH_Crisp_sandwich___IrishCentral_2.jpg?t=1656579230">
+                                    src="https://www.irishcentral.com/uploads/article/133633/IRISH_Crisp_sandwich___IrishCentral_2.jpg?t=1656579230" alt="tayto sandwich image">
                                 {% else %}
-                                <img class="card-img-top" src="{{ post.featured_image.url }}">
+                                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="recipe image">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <!-- Remove the {{ post.author }} line -->
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
@@ -60,7 +59,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             {% if recipe.image %}
-                            <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
+                            <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}" alt="recipe image">
                             {% endif %}
                             <h2 class="card-title">{{ recipe.title }}</h2>
                             <p class="card-description">{{ recipe.description }}</p>
