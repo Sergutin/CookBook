@@ -32,10 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
 DEBUG = True
 
-ALLOWED_HOSTS = ["cookbook-igor.herokuapp.com",
-                 "localhost",
-                 ".herokuapp.com",
-                 ".heroku.com"]
+ALLOWED_HOSTS = ["cookbook-igor.herokuapp.com", "localhost", ".herokuapp.com", ".heroku.com"]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -112,6 +109,16 @@ WSGI_APPLICATION = 'cookbookproject.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://cookbook-igor.herokuapp.com',
+    'http://localhost',
+    'https://cookbook-igor.herokuapp.com',
+    'https://localhost',
+    'https://8000-sergutin-cookbook-rxyukp4pdbg.ws-eu98.gitpod.io'
+]
+
+
 
 
 # Password validation
