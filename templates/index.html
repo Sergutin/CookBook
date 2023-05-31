@@ -26,7 +26,7 @@
                                 <img class="card-img-top"
                                     src="https://www.irishcentral.com/uploads/article/133633/IRISH_Crisp_sandwich___IrishCentral_2.jpg?t=1656579230" alt="tayto sandwich image">
                                 {% else %}
-                                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="recipe image">
+                                <img class="card-img-top" src="{{ post.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
                                 </div>
@@ -59,7 +59,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             {% if recipe.image %}
-                            <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}" alt="recipe image">
+                            <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}">
                             {% endif %}
                             <h2 class="card-title">{{ recipe.title }}</h2>
                             <p class="card-description">{{ recipe.description }}</p>

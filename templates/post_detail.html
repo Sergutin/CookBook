@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 {% load crispy_forms_tags %}
 
 <div class="masthead">
@@ -13,9 +14,9 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://www.irishcentral.com/uploads/article/133633/IRISH_Crisp_sandwich___IrishCentral_2.jpg?t=1656579230" width="100%" alt="recipe image">
+                <img src="https://www.irishcentral.com/uploads/article/133633/IRISH_Crisp_sandwich___IrishCentral_2.jpg?t=1656579230" width="100%">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%" alt="recipe image">
+                <img src=" {{ post.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
@@ -27,7 +28,6 @@
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
                     {{ post.content | safe }}
                 </p>
