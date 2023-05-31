@@ -192,7 +192,17 @@
 
 
   ### HTML Test
-    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    No errors were found when passing through the official HTML validator.
+
+<img src="./media/readme/test_signup.png" width=600px height=auto>
+
+<img src="./media/readme/test_login.png" width=600px height=auto>
+
+<img src="./media/readme/test_create.png" width=600px height=auto>
+
+<img src="./media/readme/test_update.png" width=600px height=auto>
+
+<img src="./media/readme/test_delete.png" width=600px height=auto>
 
 
 
@@ -285,7 +295,16 @@ To clone a repository in GitHub:</p>
 </ol>
 
 ## Media
-<p>The main page image was taken from https://sightwords.com/images/memory/memory.jpg</p>
-<p>The back card image of the car was adapted from https://pictures.dealer.com/c/currychevroletscarsdale/1429/5f5b6bc6d929fb8039c58ab125c0f7a7x.jpg?impolicy=downsize&w=568</p>
-<p>Car logos were taken from https://similarpng.com/</p>
-<p>"You Win" image was taken from https://pbs.twimg.com/media/Fg48ZrfXgAAiPR0?format=jpg&name=large</p>
+The main page image was taken from 
+## **[Here](https://www.willflyforfood.net/wp-content/uploads/2021/09/irish-food-beef-stew-featured.jpg)**
+
+Author recipe images were taken from:
+
+## **[Dublin Coddle](https://assets.epicurious.com/photos/54b3f9dc21388ef838b10b56/1:1/w_2560%2Cc_limit/51224810_dublin-coddle_1x1.jpg)**
+## **[Shepherd's Pie](https://modernmealmakeover.com/wp-content/uploads/2020/10/IMG_5119-4.jpg)**
+## **[Barmbrack](https://www.irishtimes.com/resizer/r2D6UEcoKkF8fifu9hukowW3OsY=/1600x1600/filters:format(jpg):quality(70)/cloudfront-eu-central-1.images.arcpublishing.com/irishtimes/WOTKX2WAD44J4XJEGDBTSQ7WUU.jpg)**
+## **[Irish stew](https://www.recipetineats.com/wp-content/uploads/2020/03/Irish-Beef-Guinness-Stew_6-SQ.jpg)**
+## **[Seafood chowder](https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRzuYaWTc_BrFkvZ53AJBWNBW-p9IhMJEt-UmmQHxVIIR9_goi9)**
+## **[Irish Champ](https://www.chefnotrequired.com/wp-content/uploads/2018/06/champ-10-7.jpg)**
+## **[Boxty](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT8PYJF1JjvzS5DHA8OmAqSWyabnxDVklIPfP_wsafNKmxtp9R0)**
+## **[Bacon and cabbage](https://upload.wikimedia.org/wikipedia/commons/7/78/Bacon_and_Cabbage_in_Ireland.jpg)**
