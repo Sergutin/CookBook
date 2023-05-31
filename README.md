@@ -159,6 +159,9 @@
 
 <img src="./media/readme/delete_r.png" width=600px height=auto>
 
+- There is also User’s confirmation required that they really want to delete the item.
+
+<img src="./media/readme/delete.png" width=600px height=auto>
 
 ## Testing
 
