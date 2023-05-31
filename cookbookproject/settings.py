@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["cookbook-igor.herokuapp.com", "localhost", ".herokuapp.com", ".heroku.com"]
 
@@ -60,8 +60,7 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = 'home'  # Set the desired URL after login
 LOGOUT_REDIRECT_URL = 'home'  # Set the desired URL after logout
-# LOGIN_REDIRECT_URL = '/'
-# LOGOUT_REDIRECT_URL = '/'
+
 
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-info',
@@ -102,10 +101,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'cookbookproject.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
@@ -118,9 +113,6 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-sergutin-cookbook-rxyukp4pdbg.ws-eu98.gitpod.io'
 ]
 
-
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
