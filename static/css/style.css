@@ -235,3 +235,7 @@ form {
 .update_recipe {
     text-align: center;
 }
+
+.m-0 {
+    padding-bottom: 1em;
+}
