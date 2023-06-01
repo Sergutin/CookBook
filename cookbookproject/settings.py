@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
 DEBUG = True
 
-ALLOWED_HOSTS = ["cookbook-igor.herokuapp.com", "localhost", ".herokuapp.com", ".heroku.com", '8000-sergutin-cookbook-rrgorhko6rk.ws-eu98.gitpod.io']
+ALLOWED_HOSTS = ["cookbook-igor.herokuapp.com", "localhost", ".herokuapp.com", ".heroku.com", '8000-sergutin-cookbook-q3x72j2hl3g.ws-eu98.gitpod.io']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -112,6 +112,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://localhost',
     'https://8000-sergutin-cookbook-rxyukp4pdbg.ws-eu98.gitpod.io',
     'https://8000-sergutin-cookbook-rrgorhko6rk.ws-eu98.gitpod.io',
+    'https://8000-sergutin-cookbook-q3x72j2hl3g.ws-eu98.gitpod.io',
 ]
 
 
