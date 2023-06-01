@@ -81,7 +81,8 @@
 
 
 ## Agile methodology
-    The Agile methodology was used in this project to facilitate iterative development, continuous collaboration, and regular feedback loops, ensuring a flexible and adaptive approach to meet the evolving requirements and deliver a high-quality cookbook website.
+  The Agile methodology was used in this project to facilitate iterative development, continuous collaboration, and regular feedback loops, ensuring a flexible and adaptive approach to meet the evolving requirements and deliver a high-quality cookbook website. All the functionality and development of this project were handled through GitHub, where you can find the **[projects](https://github.com/Sergutin/CookBook/issues)**.
+
 
 ## User Stories
 
@@ -99,6 +100,15 @@
  10. [USER STORY: Like and unlike recipes](https://github.com/Sergutin/CookBook/issues/1)
 
 ## Features
+
+    Home page consists of the main image descripting the site goal (What to Eat in Ireland) with a menu bar, 
+    the "recipes from the Author" block as wel as the "Your Favourite Recipes":
+
+<img src="./media/readme/main.png" width=600px height=auto>
+
+<img src="./media/readme/author.png" width=600px height=auto>
+
+<img src="./media/readme/your.png" width=600px height=auto>
 
     User features implemented are as follows:
 
@@ -162,6 +172,19 @@
 - There is also User’s confirmation required that they really want to delete the item.
 
 <img src="./media/readme/delete.png" width=600px height=auto>
+
+  Superuser / Admin
+
+<img src="./media/readme/admin.png" width=600px height=auto>
+
+  As a Superuser or Admin, I have the ability to manage all CRUD functionality, including:
+
+  1. Recipes.
+  2. Comments.
+  3. Likes.
+  4. Users.
+
+  Additionally, I can approve or delete comments and recipes, change their status, and also delete users.
 
 ## Testing
 
@@ -251,6 +274,7 @@
 
   <img src="./media/readme/html_bugs.png" width=600px height=auto>
 
+    To fix them, I removed the trailing slash from the code line, removed <hr> as a child of the <ul> element, and replaced it with paddings to make the footer part look user-friendly.
 
 
   ### Unfixed Bugs
