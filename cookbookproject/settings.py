@@ -29,8 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = int(os.environ.get("DEVELOPMENT", default=0))
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["cookbook-igor.herokuapp.com", "localhost", ".herokuapp.com", ".heroku.com", '8000-sergutin-cookbook-q3x72j2hl3g.ws-eu98.gitpod.io']
 
